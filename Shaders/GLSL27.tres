@@ -1,0 +1,70 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "// MOUSE INPUT
+
+// NOTE for GODOT SHADER: 
+// There is no built-in variable for mouse moves and clicks in Godot.
+// Examine the attached Gdscript Code which transfers mouse variables into
+// Shader Code via Uniforms.
+
+// ShaderToy gives the mouse cursor coordinates and button clicks
+// as an input via the iMouse vec4.
+//
+// Let's write a shader with basic Mouse functionality.
+// When clicked on the frame, the little disk will follow the
+// cursor. The x coordinate of the cursor changes the background color.
+// And if the cursor is inside the bigger disk, it'll color will change.
+shader_type canvas_item;
+uniform vec2 iResolution = vec2(200.0, 113.0);
+
+uniform vec2 iMouseCoords = vec2(100.0, 56.0);
+// iMouseClick: It is a TEMPLATE.
+// \".x\" for Left Button, \".y\" for Right Button (for this code \"Right\" is not active);
+// \"1\" for \"pressed\", \"0\" for \"released\"
+//uniform vec2 iMouseClick = vec2(1,0); // NOT IN USE for this SHADER.
+uniform vec2 leftClickCoords_Latest = vec2(100.0, 56.0);
+
+float disk(vec2 r, vec2 center, float radius) {
+	return 1.0 - smoothstep( radius-0.5, radius+0.5, length(r-center));
+}
+void fragment() {
+	vec2 p = UV;
+	vec2 r =  2.0*vec2(UV * iResolution - 0.5*iResolution.xy)/iResolution.y;
+//	vec2 p = vec2(fragCoord.xy / iResolution.xy);
+//	vec2 r =  2.0*vec2(fragCoord.xy - 0.5*iResolution.xy)/iResolution.y;
+	float xMax = iResolution.x/iResolution.y;
+	
+	// background color depends on the x coordinate of the cursor
+	vec3 bgCol = vec3(iMouseCoords.x / iResolution.x);
+	vec3 col1 = vec3(0.216, 0.471, 0.698); // blue
+	vec3 col2 = vec3(1.00, 0.329, 0.298); // yellow
+	vec3 col3 = vec3(0.867, 0.910, 0.247); // red
+	
+	vec3 ret = bgCol;
+	
+	vec2 center;
+	// draw the big yellow disk
+	center = vec2(43., iResolution.y/2.);
+	float radius = 26.;
+	// if the cursor coordinates is inside the disk
+	
+	if( length(iMouseCoords-center)>radius ) {
+		// use color3
+		ret = mix(ret, col3, disk(UV * iResolution, center, radius));
+	}
+	else {
+		// else use color2
+		ret = mix(ret, col2, disk(UV * iResolution, center, radius));
+	}	
+	
+	// draw the small blue disk at the cursor
+	center = leftClickCoords_Latest;
+	ret = mix(ret, col1, disk(UV * iResolution, center, 9.));
+	COLOR += vec4(ret, 1.0);
+
+	vec3 pixel = ret;
+	COLOR = vec4(pixel, 1.0);	
+}
+
+"

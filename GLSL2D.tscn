@@ -1,0 +1,459 @@
+[gd_scene load_steps=76 format=2]
+
+[ext_resource path="res://Assets/Black200x113.png" type="Texture" id=1]
+[ext_resource path="res://Shaders/GLSL00_WELCOMESCREEN.tres" type="Shader" id=2]
+[ext_resource path="res://Shaders/GLSL01.tres" type="Shader" id=3]
+[ext_resource path="res://Shaders/GLSL02.tres" type="Shader" id=4]
+[ext_resource path="res://Shaders/GLSL03.tres" type="Shader" id=5]
+[ext_resource path="res://Shaders/GLSL04.tres" type="Shader" id=6]
+[ext_resource path="res://Shaders/GLSL05.tres" type="Shader" id=7]
+[ext_resource path="res://Shaders/GLSL06.tres" type="Shader" id=8]
+[ext_resource path="res://Shaders/GLSL07.tres" type="Shader" id=9]
+[ext_resource path="res://Shaders/GLSL08.tres" type="Shader" id=10]
+[ext_resource path="res://Shaders/GLSL09.tres" type="Shader" id=11]
+[ext_resource path="res://Shaders/GLSL10.tres" type="Shader" id=12]
+[ext_resource path="res://Shaders/GLSL13.tres" type="Shader" id=13]
+[ext_resource path="res://Shaders/GLSL12.tres" type="Shader" id=14]
+[ext_resource path="res://Shaders/GLSL11.tres" type="Shader" id=15]
+[ext_resource path="res://Shaders/GLSL14.tres" type="Shader" id=16]
+[ext_resource path="res://Shaders/GLSL15.tres" type="Shader" id=17]
+[ext_resource path="res://Shaders/GLSL16.tres" type="Shader" id=18]
+[ext_resource path="res://Shaders/GLSL17.tres" type="Shader" id=19]
+[ext_resource path="res://Shaders/GLSL18.tres" type="Shader" id=20]
+[ext_resource path="res://Shaders/GLSL19.tres" type="Shader" id=21]
+[ext_resource path="res://Shaders/GLSL20.tres" type="Shader" id=22]
+[ext_resource path="res://Shaders/GLSL21.tres" type="Shader" id=23]
+[ext_resource path="res://Shaders/GLSL22.tres" type="Shader" id=24]
+[ext_resource path="res://Shaders/GLSL23.tres" type="Shader" id=25]
+[ext_resource path="res://Shaders/GLSL24.tres" type="Shader" id=26]
+[ext_resource path="res://Shaders/GLSL26.tres" type="Shader" id=27]
+[ext_resource path="res://Shaders/GLSL25.tres" type="Shader" id=28]
+[ext_resource path="res://Assets/TiledStone01512512.png" type="Texture" id=29]
+[ext_resource path="res://Assets/RustyMetal02512512.png" type="Texture" id=30]
+[ext_resource path="res://Shaders/GLSL27.tres" type="Shader" id=31]
+[ext_resource path="res://iMouse.gd" type="Script" id=32]
+[ext_resource path="res://Shaders/GLSL28.tres" type="Shader" id=33]
+[ext_resource path="res://Assets/Noise01512512.png" type="Texture" id=34]
+[ext_resource path="res://MenuForGLSL.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Assets/Fonts/Roboto/Roboto-Black.ttf" type="DynamicFontData" id=36]
+[ext_resource path="res://Assets/Fonts/Roboto/Roboto-Bold.ttf" type="DynamicFontData" id=37]
+[ext_resource path="res://GLSL2D.gd" type="Script" id=38]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 2 )
+shader_param/iResolution = Vector2( 200, 113 )
+shader_param/iChannel0 = ExtResource( 34 )
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 3 )
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/Black200x113.png-d474a74c830ad503e62bcfb793ee7890.stex"
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = ExtResource( 4 )
+shader_param/iResolution = Vector2( 200, 113 )
+
+[sub_resource type="StreamTexture" id=4]
+flags = 4
+load_path = "res://.import/Black200x113.png-d474a74c830ad503e62bcfb793ee7890.stex"
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = ExtResource( 5 )
+shader_param/iResolution = Vector2( 200, 113 )
+
+[sub_resource type="StreamTexture" id=5]
+flags = 4
+load_path = "res://.import/Black200x113.png-d474a74c830ad503e62bcfb793ee7890.stex"
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = ExtResource( 6 )
+shader_param/iResolution = Vector2( 200, 113 )
+
+[sub_resource type="StreamTexture" id=6]
+flags = 4
+load_path = "res://.import/Black200x113.png-d474a74c830ad503e62bcfb793ee7890.stex"
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = ExtResource( 7 )
+shader_param/iResolution = Vector2( 200, 113 )
+
+[sub_resource type="ShaderMaterial" id=11]
+shader = ExtResource( 8 )
+shader_param/iResolution = Vector2( 200, 113 )
+
+[sub_resource type="ShaderMaterial" id=12]
+shader = ExtResource( 9 )
+shader_param/iResolution = Vector2( 200, 113 )
+
+[sub_resource type="ShaderMaterial" id=13]
+shader = ExtResource( 10 )
+shader_param/iResolution = Vector2( 200, 113 )
+
+[sub_resource type="ShaderMaterial" id=14]
+shader = ExtResource( 11 )
+shader_param/iResolution = Vector2( 200, 113 )
+
+[sub_resource type="ShaderMaterial" id=15]
+shader = ExtResource( 12 )
+shader_param/iResolution = Vector2( 200, 113 )
+
+[sub_resource type="ShaderMaterial" id=16]
+shader = ExtResource( 15 )
+shader_param/iResolution = Vector2( 200, 113 )
+
+[sub_resource type="ShaderMaterial" id=17]
+shader = ExtResource( 14 )
+shader_param/iResolution = Vector2( 200, 113 )
+
+[sub_resource type="ShaderMaterial" id=18]
+shader = ExtResource( 13 )
+shader_param/iResolution = Vector2( 200, 113 )
+
+[sub_resource type="ShaderMaterial" id=19]
+shader = ExtResource( 16 )
+shader_param/iResolution = Vector2( 200, 113 )
+
+[sub_resource type="ShaderMaterial" id=20]
+shader = ExtResource( 17 )
+shader_param/iResolution = Vector2( 200, 113 )
+
+[sub_resource type="ShaderMaterial" id=21]
+shader = ExtResource( 18 )
+shader_param/iResolution = Vector2( 200, 113 )
+
+[sub_resource type="ShaderMaterial" id=22]
+shader = ExtResource( 19 )
+shader_param/iResolution = Vector2( 200, 113 )
+
+[sub_resource type="ShaderMaterial" id=23]
+shader = ExtResource( 20 )
+shader_param/iResolution = Vector2( 200, 113 )
+
+[sub_resource type="ShaderMaterial" id=24]
+shader = ExtResource( 21 )
+shader_param/iResolution = Vector2( 200, 113 )
+
+[sub_resource type="ShaderMaterial" id=25]
+shader = ExtResource( 22 )
+shader_param/iResolution = Vector2( 200, 113 )
+
+[sub_resource type="ShaderMaterial" id=26]
+shader = ExtResource( 23 )
+shader_param/iResolution = Vector2( 200, 113 )
+
+[sub_resource type="ShaderMaterial" id=27]
+shader = ExtResource( 24 )
+shader_param/iResolution = Vector2( 200, 113 )
+
+[sub_resource type="ShaderMaterial" id=28]
+shader = ExtResource( 25 )
+shader_param/iResolution = Vector2( 200, 113 )
+
+[sub_resource type="ShaderMaterial" id=29]
+shader = ExtResource( 26 )
+shader_param/iResolution = Vector2( 200, 113 )
+
+[sub_resource type="ShaderMaterial" id=30]
+shader = ExtResource( 28 )
+shader_param/iResolution = Vector2( 200, 113 )
+
+[sub_resource type="ShaderMaterial" id=31]
+shader = ExtResource( 27 )
+shader_param/iResolution = Vector2( 200, 113 )
+shader_param/iChannel1 = ExtResource( 29 )
+shader_param/iChannel2 = ExtResource( 30 )
+
+[sub_resource type="ShaderMaterial" id=32]
+shader = ExtResource( 31 )
+shader_param/iResolution = Vector2( 200, 113 )
+shader_param/iMouseCoords = Vector2( 100, 56 )
+shader_param/leftClickCoords_Latest = Vector2( 100, 56 )
+
+[sub_resource type="ShaderMaterial" id=33]
+shader = ExtResource( 33 )
+shader_param/iResolution = Vector2( 200, 113 )
+
+[sub_resource type="DynamicFont" id=35]
+size = 40
+outline_size = 4
+outline_color = Color( 0.717647, 0.721569, 0.0862745, 1 )
+font_data = ExtResource( 37 )
+
+[sub_resource type="DynamicFont" id=36]
+size = 260
+outline_size = 28
+outline_color = Color( 0.886275, 0.0352941, 0.0352941, 1 )
+font_data = ExtResource( 37 )
+
+[sub_resource type="DynamicFont" id=37]
+size = 30
+outline_size = 2
+font_data = ExtResource( 37 )
+
+[sub_resource type="DynamicFont" id=34]
+outline_size = 1
+outline_color = Color( 0.878431, 0.878431, 0.0901961, 1 )
+extra_spacing_space = 1
+font_data = ExtResource( 36 )
+
+[node name="GLSL2D" type="Node2D"]
+script = ExtResource( 38 )
+
+[node name="GLSL_INTRO_COMPLEX" type="Sprite" parent="."]
+material = SubResource( 1 )
+position = Vector2( 104, 60 )
+texture = ExtResource( 1 )
+flip_v = true
+
+[node name="Level00" type="Node2D" parent="."]
+position = Vector2( 0, 60 )
+
+[node name="GLSL01" type="Sprite" parent="Level00"]
+material = SubResource( 2 )
+position = Vector2( 311, 0 )
+texture = SubResource( 3 )
+flip_v = true
+
+[node name="GLSL02" type="Sprite" parent="Level00"]
+material = SubResource( 7 )
+position = Vector2( 518, 0 )
+texture = SubResource( 4 )
+flip_v = true
+
+[node name="GLSL03" type="Sprite" parent="Level00"]
+material = SubResource( 8 )
+position = Vector2( 725, 0 )
+texture = SubResource( 5 )
+flip_v = true
+
+[node name="GLSL04" type="Sprite" parent="Level00"]
+material = SubResource( 9 )
+position = Vector2( 932, 0 )
+texture = SubResource( 6 )
+flip_v = true
+
+[node name="Level01" type="Node2D" parent="."]
+position = Vector2( 0, 180 )
+
+[node name="GLSL05" type="Sprite" parent="Level01"]
+material = SubResource( 10 )
+position = Vector2( 104, 0 )
+texture = ExtResource( 1 )
+flip_v = true
+
+[node name="GLSL06" type="Sprite" parent="Level01"]
+material = SubResource( 11 )
+position = Vector2( 311, 0 )
+texture = SubResource( 3 )
+flip_v = true
+
+[node name="GLSL07" type="Sprite" parent="Level01"]
+material = SubResource( 12 )
+position = Vector2( 518, 0 )
+texture = SubResource( 4 )
+flip_v = true
+
+[node name="GLSL08" type="Sprite" parent="Level01"]
+material = SubResource( 13 )
+position = Vector2( 725, 0 )
+texture = SubResource( 5 )
+flip_v = true
+
+[node name="GLSL09" type="Sprite" parent="Level01"]
+material = SubResource( 14 )
+position = Vector2( 932, 0 )
+texture = SubResource( 6 )
+flip_v = true
+
+[node name="Level02" type="Node2D" parent="."]
+position = Vector2( 0, 300 )
+
+[node name="GLSL10" type="Sprite" parent="Level02"]
+material = SubResource( 15 )
+position = Vector2( 104, 0 )
+texture = ExtResource( 1 )
+flip_v = true
+
+[node name="GLSL11" type="Sprite" parent="Level02"]
+material = SubResource( 16 )
+position = Vector2( 311, 0 )
+texture = SubResource( 3 )
+flip_v = true
+
+[node name="GLSL12" type="Sprite" parent="Level02"]
+material = SubResource( 17 )
+position = Vector2( 518, 0 )
+texture = SubResource( 4 )
+flip_v = true
+
+[node name="GLSL13" type="Sprite" parent="Level02"]
+material = SubResource( 18 )
+position = Vector2( 725, 0 )
+texture = SubResource( 5 )
+flip_v = true
+
+[node name="GLSL14" type="Sprite" parent="Level02"]
+material = SubResource( 19 )
+position = Vector2( 932, 0 )
+texture = SubResource( 6 )
+flip_v = true
+
+[node name="Level03" type="Node2D" parent="."]
+position = Vector2( 0, 420 )
+
+[node name="GLSL15" type="Sprite" parent="Level03"]
+material = SubResource( 20 )
+position = Vector2( 104, 0 )
+texture = ExtResource( 1 )
+flip_v = true
+
+[node name="GLSL16" type="Sprite" parent="Level03"]
+material = SubResource( 21 )
+position = Vector2( 311, 0 )
+texture = SubResource( 3 )
+flip_v = true
+
+[node name="GLSL17" type="Sprite" parent="Level03"]
+material = SubResource( 22 )
+position = Vector2( 518, 0 )
+texture = SubResource( 4 )
+flip_v = true
+
+[node name="GLSL18" type="Sprite" parent="Level03"]
+material = SubResource( 23 )
+position = Vector2( 725, 0 )
+texture = SubResource( 5 )
+flip_v = true
+
+[node name="GLSL19" type="Sprite" parent="Level03"]
+material = SubResource( 24 )
+position = Vector2( 932, 0 )
+texture = SubResource( 6 )
+flip_v = true
+
+[node name="Level04" type="Node2D" parent="."]
+position = Vector2( 0, 540 )
+
+[node name="GLSL20" type="Sprite" parent="Level04"]
+material = SubResource( 25 )
+position = Vector2( 104, 0 )
+texture = ExtResource( 1 )
+flip_v = true
+
+[node name="GLSL21" type="Sprite" parent="Level04"]
+material = SubResource( 26 )
+position = Vector2( 311, 0 )
+texture = SubResource( 3 )
+flip_v = true
+
+[node name="GLSL22" type="Sprite" parent="Level04"]
+material = SubResource( 27 )
+position = Vector2( 518, 0 )
+texture = SubResource( 4 )
+flip_v = true
+
+[node name="GLSL23" type="Sprite" parent="Level04"]
+material = SubResource( 28 )
+position = Vector2( 725, 0 )
+texture = SubResource( 5 )
+flip_v = true
+
+[node name="GLSL24" type="Sprite" parent="Level04"]
+material = SubResource( 29 )
+position = Vector2( 932, 0 )
+texture = SubResource( 6 )
+flip_v = true
+
+[node name="Level05" type="Node2D" parent="."]
+position = Vector2( 0, 660 )
+
+[node name="GLSL25" type="Sprite" parent="Level05"]
+material = SubResource( 30 )
+position = Vector2( 104, 0 )
+texture = ExtResource( 1 )
+flip_v = true
+
+[node name="GLSL26" type="Sprite" parent="Level05"]
+material = SubResource( 31 )
+position = Vector2( 311, 0 )
+texture = SubResource( 3 )
+flip_v = true
+
+[node name="GLSL27" type="Sprite" parent="Level05"]
+material = SubResource( 32 )
+position = Vector2( 518, 0 )
+texture = SubResource( 4 )
+script = ExtResource( 32 )
+
+[node name="GLSL28" type="Sprite" parent="Level05"]
+material = SubResource( 33 )
+position = Vector2( 725, 0 )
+texture = SubResource( 5 )
+flip_v = true
+
+[node name="Magnifier" type="Camera2D" parent="."]
+position = Vector2( -108.405, 63.4054 )
+current = true
+zoom = Vector2( 0.158, 0.158 )
+
+[node name="EscScreen" type="Label" parent="Magnifier"]
+visible = false
+modulate = Color( 0.584314, 0.564706, 0.0627451, 1 )
+margin_left = -42.0
+margin_top = -53.0
+margin_right = 482.0
+margin_bottom = 108.0
+rect_scale = Vector2( 0.158, 0.158 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 35 )
+text = "press \"           \"
+to exit                       "
+align = 1
+
+[node name="EscScreen2" type="Label" parent="Magnifier/EscScreen"]
+margin_left = 78.7686
+margin_top = 1.40967
+margin_right = 2636.77
+margin_bottom = 710.41
+rect_scale = Vector2( 0.158, 0.158 )
+custom_colors/font_color = Color( 1, 0.917647, 0.0235294, 1 )
+custom_fonts/font = SubResource( 36 )
+text = "       e s c 
+         main screen"
+align = 1
+
+[node name="Label" type="Label" parent="Magnifier"]
+visible = false
+margin_left = -98.6113
+margin_top = 47.5537
+margin_right = 3.3887
+margin_bottom = 83.5537
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 37 )
+text = "XxXxXx"
+
+[node name="MenuForGLSL" parent="." instance=ExtResource( 35 )]
+position = Vector2( 1044, 0 )
+z_index = 1
+
+[node name="Legend" type="Node2D" parent="."]
+position = Vector2( 832, 603 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Legend"]
+margin_left = -3.0
+margin_top = 10.0
+margin_right = 234.0
+margin_bottom = 123.0
+mouse_filter = 2
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 34 )
+text = "Click \"Mouse Left Button\" on
+						MENU or 
+						SHADED TILE 
+Press \"esc\" to Back This Screen
+Press \"Q\" to Exit
+"
+scroll_active = false

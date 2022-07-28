@@ -1,0 +1,15 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "// SOLID COLOR
+// \"fragColor\" is the output variable of the shader.
+// Its value determines the image on the screen.
+// This shaders sets its value to be the yellow color.
+shader_type canvas_item;
+uniform vec2 iResolution = vec2(200.0, 113.0);
+
+void fragment() {
+	vec2 r = (UV * iResolution - 0.5*iResolution.xy) / iResolution.y;
+	COLOR = vec4(1.0, 1.0, 0.0 ,1.0);
+}
+"

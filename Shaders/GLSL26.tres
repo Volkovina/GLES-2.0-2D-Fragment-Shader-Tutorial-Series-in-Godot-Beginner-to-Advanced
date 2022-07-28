@@ -1,0 +1,67 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "// TEXTURES
+//
+shader_type canvas_item;
+uniform vec2 iResolution = vec2(200.0, 113.0);
+const float PI = 3.14159265359;
+const float TWOPI = 6.28318530718;
+uniform sampler2D iChannel1;
+uniform sampler2D iChannel2;
+float rect(vec2 r, vec2 bottomLeft, vec2 topRight) {
+	float ret;
+	float d = 0.005;
+	ret = smoothstep(bottomLeft.x-d, bottomLeft.x+d, r.x);
+	ret *= smoothstep(bottomLeft.y-d, bottomLeft.y+d, r.y);
+	ret *= 1.0 - smoothstep(topRight.y-d, topRight.y+d, r.y);
+	ret *= 1.0 - smoothstep(topRight.x-d, topRight.x+d, r.x);
+	return ret;
+}
+
+void fragment() {
+	vec2 p = UV;
+	vec2 r =  2.0*vec2(UV * iResolution - 0.5*iResolution.xy)/iResolution.y;
+//	vec2 p = vec2(fragCoord.xy / iResolution.xy);
+//	vec2 r =  2.0*vec2(fragCoord.xy - 0.5*iResolution.xy)/iResolution.y;
+	
+	float xMax = iResolution.x/iResolution.y;
+	
+	vec3 bgCol = vec3(0.3);
+	vec3 col1 = vec3(0.216, 0.471, 0.698); // blue
+	vec3 col2 = vec3(1.00, 0.329, 0.298); // yellow
+	vec3 col3 = vec3(0.867, 0.910, 0.247); // red
+	
+	vec3 ret;
+	
+	if(p.x < 1./3.) { // Part I
+		ret = texture(iChannel1, vec2(p.x, p.y)).xyz;
+	} 
+	else if(p.x < 2./3.) { // Part II
+		ret = texture(iChannel1, vec2(UV.x, 0.5*UV.y + fract(TIME*2.)/10.)).xyz;
+	} 
+	else if(p.x < 3./3.) { // Part III
+		r = r - vec2(xMax*2./3., 0.);
+		float angle = TIME;
+		mat2 rotMat = mat2(vec2(cos(angle), -sin(angle)),
+        	               vec2(sin(angle),  cos(angle))) * .25;
+//		mat2 rotMat = mat2(cos(angle), -sin(angle),
+//        	               sin(angle),  cos(angle));
+		vec2 q = rotMat*r;
+		vec3 texA = texture(iChannel1, q + vec2(.5)).xyz;
+		vec3 texB = texture(iChannel2, q).xyz;
+		
+		angle = -TIME;
+		rotMat = mat2(vec2(cos(angle), -sin(angle)),
+        	               vec2(sin(angle),  cos(angle)));
+//		rotMat = mat2(cos(angle), -sin(angle),
+//        	               sin(angle),  cos(angle));
+		q = rotMat*r;		
+		ret = mix(texA, texB, rect(q, vec2(-0.3, -0.3), vec2(.3, .3)) );
+		
+	}
+	
+	vec3 pixel = ret;
+	COLOR = vec4(pixel, 1.0);
+}
+"

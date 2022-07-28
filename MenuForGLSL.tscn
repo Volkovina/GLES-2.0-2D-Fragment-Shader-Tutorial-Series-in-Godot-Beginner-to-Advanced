@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Fonts/Roboto/Roboto-BoldCondensed.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://MenuForGLSL.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 14
+font_data = ExtResource( 1 )
+
+[node name="MenuForGLSL" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_right = 240.0
+margin_bottom = 600.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 233.0
+margin_bottom = 673.0
+
+[node name="HBoxContainerMenu" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+margin_right = 226.0
+
+[node name="HBoxContainer01" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+margin_top = 4.0
+margin_right = 226.0
+margin_bottom = 23.0
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer01"]
+margin_right = 226.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_colors/font_color = Color( 0.0784314, 0.717647, 0.0901961, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "MENU"
+align = 1
+
+[node name="ItemList" type="ItemList" parent="PanelContainer/VBoxContainer"]
+margin_top = 27.0
+margin_right = 226.0
+margin_bottom = 666.0
+size_flags_horizontal = 15
+size_flags_vertical = 15
+custom_colors/guide_color = Color( 0.792157, 0.796078, 0.0745098, 1 )
+custom_colors/font_color_selected = Color( 0.741176, 0.552941, 0.101961, 1 )
+custom_colors/font_color = Color( 0.113725, 0.298039, 0.647059, 1 )
+custom_fonts/font = SubResource( 1 )
+items = [ "____________________________________________________________________________________", null, true, " 1 Void. Blank Screen.", null, false, " 2 Solid Color", null, false, " 3 GLSL Vectors", null, false, " 4 RGB ColorModel&Comp. of Vectors", null, false, " 5 Coordinate System", null, false, " 6 Resolution, Frame Size", null, false, " 7 Coordinate Transformation", null, false, " 8 Horizontal & Vertical Lines", null, false, " 9 Visualizing Coordinate System", null, false, "10 Moving Center to Frame Center", null, false, "11 Aspect Ratio of Coord. System 1.0", null, false, "12 Disk", null, false, "13 Functions", null, false, "14 Built-In Functions: Step", null, false, "15 Built-In Functions: Clamp", null, false, "16 Built-In Functions: Smoothstep", null, false, "17 Built-In Functions: Mix", null, false, "18 Anti-Aliasing with Smoothstep", null, false, "19 Function Plotting", null, false, "20 Color Addition & Substraction", null, false, "21 Coord.Transformations: Rotation", null, false, "22 Coord.Transformations: Scaling", null, false, "23 Successive Coord.Transformations", null, false, "24 Time, Motion & Animation", null, false, "25 Plasma Effect", null, false, "26 Textures", null, false, "27 Mouse Input", null, false, "28 Randomness", null, false, "29 GLSL - WELCOME SCREEN", null, false ]
+auto_height = true
+
+[connection signal="item_selected" from="PanelContainer/VBoxContainer/ItemList" to="." method="_on_ItemList_item_selected"]
